@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import GlobalStyles from 'styles/globalStyles'
+import routes from 'routes'
+import Layout from 'components/Layout/Layout'
+import LoginPage from 'pages/LoginPage/LoginPage'
+import DashboardPage from 'pages/DashboardPage/DashboardPage'
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css' // third-party-library styling
+import AuthenticatedRoute from 'components/AuthenticatedRoute/AuthenticatedRoute'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App() {
+
+    return (
+        <>
+            <GlobalStyles />
+            <Layout>
+                <Switch>
+                    <Route {...routes.login} component={LoginPage} />
+                    <AuthenticatedRoute {...routes.dashboard} component={DashboardPage} />
+                    
+                </Switch>
+                <ToastContainer position={toast.POSITION.BOTTOM_LEFT} newestOnTop={true} />
+            </Layout>
+        </>
+    )
 }
 
-export default App;
+export default App
