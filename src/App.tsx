@@ -11,6 +11,7 @@ import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRou
 
 function App() {
 
+
     return (
         <>
             <GlobalStyles />
