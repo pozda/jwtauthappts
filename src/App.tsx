@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import GlobalStyles from './styles/globalStyles'
 import routes from './routes'
 import Layout from './components/Layout/Layout'
@@ -18,7 +18,7 @@ function App() {
                 <Switch>
                     <Route {...routes.login} component={LoginPage} />
                     <AuthenticatedRoute {...routes.dashboard} component={DashboardPage} />
-                    
+                    <Redirect to={routes.login.path} />
                 </Switch>
                 <ToastContainer position={toast.POSITION.BOTTOM_LEFT} newestOnTop={true} />
             </Layout>
