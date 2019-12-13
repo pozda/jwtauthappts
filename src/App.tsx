@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import GlobalStyles from 'styles/globalStyles'
-import routes from 'routes'
+import routes from 'routes/index'
 import Layout from 'components/Layout/Layout'
 import LoginPage from 'pages/LoginPage/LoginPage'
 import DashboardPage from 'pages/DashboardPage/DashboardPage'
